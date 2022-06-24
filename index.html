@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='styles.css' rel='stylesheet'/>
+    <link href="assets.css" rel="stylesheet" type= 'txt/css'/>
+    <title>todo-list</title>
+</head>
+<body>
+	<div class="container">
+		<h2>TODO LIST</h2>
+
+		<p>
+			<input id="new-task" type="text" placeholder="new task">
+            <button>Add</button>
+		</p>
+
+		<h3>Todo</h3>
+		<ul id="incomplete-tasks">
+			<li>
+                <input type="checkbox">
+                <label>Pay Bills</label>
+                <button class="edit">Edit</button>
+                <button class="delete">Delete</button>
+            </li>
+			<li>
+                <input type="checkbox">
+                <label>Go Shopping</label>
+                <button class="edit">Edit</button>
+                <button class="delete">Delete</button>
+            </li>
+		</ul>
+
+		<h3>Completed</h3>
+		<ul id="completed-tasks">
+			<li>
+                <input type="checkbox" checked>
+                <label>See the Doctor</label>
+                <button class="edit">Edit</button>
+                <button class="delete">Delete</button>
+            </li>
+		</ul>
+	</div>
+
+</body>
+
+</html>
