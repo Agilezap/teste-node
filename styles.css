@@ -1,4 +1,3 @@
-
 body {
 	background: #fff;
 	color: #333;
@@ -19,6 +18,12 @@ h2 {
 	text-align:center;
 	padding-top:10px;
 	margin-bottom:0px;
+	@font-face {
+		font-family: 'Gabriel' ;
+		src: url(Gabriel.otf) format ('opentype');
+	font-weight: normal;
+	font-style: normal;	
+	}
 }
 
 ul {
@@ -43,7 +48,7 @@ button {
 
 button {
 	background: none;
-	border: 0px;
+	border: 10px;
 	color: #888;
 	font-size: 15px;
 	width: 60px;
@@ -132,6 +137,13 @@ li > input[type="text"] {
 
 li > .delete:hover {
 	color: #CF2323;
+	font-weight: bold;
+		
+}
+
+li > .edit:hover {
+	color: #242675;
+	font-weight: bold;
 }
 
 
@@ -140,20 +152,5 @@ li > .delete:hover {
 #completed-tasks label {
 	text-decoration: line-through;
 	color: #888;
-}
-
-
-/* Edit Task */
-
-ul li input[type=text] {
-	display: none;
-}
-
-ul li.editMode input[type=text] {
-	display: block;
-}
-
-ul li.editMode label {
-	display: none;
 }
 
