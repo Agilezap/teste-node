@@ -27,13 +27,32 @@ exports.delete = (req, res, next) => {
 
 // metodo get para listar os TODOS
 exports.get = (req, res, next) => {
-    db.query('SELECT * FROM tb_todos').then((dados) => {
-        res.status(200).send( dados );
-    });
+    try {
+        db.query('SELECT * FROM tb_todos').then((dados) => {
+            res.status(200).send(dados);
+        });
+    } catch (err) {
+        console.error('Erro ao recuperar a lista de TODOS !', err.message);
+        next(err);
+    }
 };
 
-// metodo get by ID inicial
+// metodo get para buscar TODO por um ID
 exports.getById = (req, res, next) => {
+
+    let filter = '';
     let id = req.params.id;
-    res.status(200).send(`Rota GET com ID! ${id}`);
+
+    if( id ) {
+        filter = ' WHERE ID=' + parseInt(id);
+    }
+
+    try {
+        db.query('SELECT * FROM tb_todos' + filter).then((dados) => {
+            res.status(200).send(dados);
+        });
+    } catch (err) {
+        console.error('Erro ao recuperar um TODO por ID !', err.message);
+        next(err);
+    }    
 };
