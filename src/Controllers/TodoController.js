@@ -1,5 +1,7 @@
 // controlador com a definição dos métodos do recurso TODO
 
+const db = require('../db/db');
+
 // metodo post inicial
 exports.post = (req, res, next) => {
     res.status(201).send('Rota POST!');
@@ -23,9 +25,11 @@ exports.delete = (req, res, next) => {
     res.status(200).send(`Rota DELETE com ID! --> ${id}`);
 };
 
-// metodo get inicial
+// metodo get para listar os TODOS
 exports.get = (req, res, next) => {
-    res.status(200).send('Rota GET!');
+    db.query('SELECT * FROM tb_todos').then((dados) => {
+        res.status(200).send( dados );
+    });
 };
 
 // metodo get by ID inicial
