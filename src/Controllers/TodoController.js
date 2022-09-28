@@ -19,10 +19,17 @@ exports.path = (req, res, next) => {
     res.status(201).send(`Rota PATH com ID! --> ${id}`);
 };
 
-// metodo delete inicial
+// metodo delete para excluir um registro da tabela tb_todos
 exports.delete = (req, res, next) => {
     let id = req.params.id;
-    res.status(200).send(`Rota DELETE com ID! --> ${id}`);
+    try {
+        db.query('DELETE FROM tb_todos WHERE ID=' + parseInt(id)).then((dados) => {
+            res.status(200).send('registro excluido com sucesso !');
+        });
+    } catch (err) {
+        console.error('Erro ao recuperar a lista de TODOS !', err.message);
+        next(err);
+    }
 };
 
 // metodo get para listar os TODOS
