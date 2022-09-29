@@ -1,37 +1,54 @@
-# Teste Desenvolvedor Agilezap - ALLAN GLEISON SANTOS
+# Teste Desenvolvedor Agilezap
 
-Olá caro desenvolvedor, nesse teste analisaremos seu conhecimento geral. Abaixo explicaremos tudo o que será necessário.
-
-## Instruções
-
-Você deve desenvolver uma API, utilizando Node, para uma aplicação de gerenciamento de TODOs.
-
-A escolha das bibliotecas, banco de dados, arquitetura, etc, fica a seu critério.
-
-O código precisa ser capaz de rodar em uma máquina linux.
-
-Altere o arquivo README explicando o que é preciso para rodar sua aplicação.
+Desenvolvedor: Allan Gleison Santos
 
 ## API
 
-A API precisa ser desenvolvida em Node, e deverá ser possível:
+Nessa API desenvolvida em NodeJs, é possível:
 
 - Listar todos os TODOs.
 - Adicionar um novo TODO.
 - Alterar um TODO.
 - Deletar um TODO.
 
-## Entrega
+## Pré Requisitos
 
-Para iniciar o teste, faça um fork deste repositório, crie uma branch com o seu nome completo e depois envie-nos o pull request. Se você apenas clonar o repositório não vai conseguir fazer push e depois vai ser mais complicado fazer o pull request.
+1 - Ter instalado o cliente de banco de dados MYSQL ( Pode usar por exemplo o XAMPP que já vem com o MYSQL )
+2 - Ter instalado o NODEJS
+3 - Ter instalado o pacote NPM
 
-## Nossa análise
+## Instruções
 
-- Organização do código, separação de módulos, legibilidade e comentários.
-- Histórico de commits.
+1 - Execute o MYSQL e crie um novo banco de dados com o nome: "todo"
+
+2 - Pelo console, navegue até o diretório do projeto e execute o comando: "npm install" para atualiação dos pacotes npm do projeto
+
+3 - Ainda no diretório do projeto e, com o banco já criado, abra o console e execute o seguinte comando para criação da tabela e de alguns registros:
+
+- node src/Services/create-table.js
+
+4 - O sistema deverá exibir as mensagens de sucesso na criação da tabela e dos primeiros registros !
+
+5 - Execute o comando "npm i -g nodemon" para instalação do pacote nodemon apropriado para executar o servidor do node
+
+6 - Após a instalação execute o comando "nodemon server.js" ( você deverá estar no diretório do projeto )
+
+- Você deverá ver no console o seguinte resultado:
+
+D:\DESENV\DEVNODEJS\teste-node>nodemon server.js
+[nodemon] 2.0.20
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching path(s): *.*
+[nodemon] watching extensions: js,mjs,json
+[nodemon] starting `node server.js`
+API funcionando em http://localhost:3000
+
+7 - Agora com o servidor em funcionamento, você poderá abrir o navegador e acessar a url "http://localhost:3000"
+
+- Você deverá ver uma tela com os resultados dos registros cadastrados na tabela como a seguir:
+
+{"data":[{"ID":1,"nome":"tarefa 1","descricao":"execute a tarefa 1"},{"ID":2,"nome":"tarefa 2","descricao":"execute a tarefa 2"},{"ID":3,"nome":"tarefa 3","descricao":"execute a tarefa 3"}],"meta":{"page":1}}
 
 ## Dúvidas?
 
-Quaisquer dúvidas que você venha a ter, consulte as issues para ver se alguém já não a fez e caso você não ache sua resposta, abra você mesmo uma nova issue!
-
-### Boa sorte!
+Quaisquer dúvidas que você venha a ter, entre em contato com stratosgrevas@gmail.com
