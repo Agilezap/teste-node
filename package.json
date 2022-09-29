@@ -1,0 +1,24 @@
+{
+  "name": "teste-node",
+  "version": "1.0.0",
+  "description": "Teste Node do desenvolvedor Allan Gleison Santos.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stratosgrevas/teste-node.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stratosgrevas/teste-node/issues"
+  },
+  "homepage": "https://github.com/stratosgrevas/teste-node#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "mysql2": "^2.3.3"
+  }
+}
