@@ -19,6 +19,8 @@ Nessa API desenvolvida em NodeJs, é possível:
 
 3 - Ter instalado o pacote NPM
 
+4 - Use o Postman ou algum outro HTTP client para testar os métodos de requisição HTTP ( get, post, put, delete )
+
 ## Instruções
 
 1 - Execute o MYSQL e crie um novo banco de dados com o nome: <strong>"todo"</strong>
@@ -52,6 +54,72 @@ API funcionando em http://localhost:3000
 
 <pre>
 {"data":[{"ID":1,"nome":"tarefa 1","descricao":"execute a tarefa 1"},{"ID":2,"nome":"tarefa 2","descricao":"execute a tarefa 2"},{"ID":3,"nome":"tarefa 3","descricao":"execute a tarefa 3"}],"meta":{"page":1}}
+</pre>
+
+## Criando um novo registro na tabela ( Método POST )
+
+Como alternativa ao HTTP CLIENT, ainda no diretório do projeto, execute o comando:
+
+<pre>
+curl -i -X POST -H 'Accept: application/json; charset=utf-8' -H 'Content-type: application/json; charset=utf-8' http://localhost:3000/todos --data '{"nome":"tarefa 4","descricao":"fazer tarefa 4"}'
+</pre>
+
+Você deverá receber o seguinte retorno:
+
+<pre>
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Content-Type: application/json; charset=utf-8
+Content-Length: 43
+ETag: W/"2b-zKo5blphiv49L2q9jgHO7POEP58"
+Date: Thu, 29 Sep 2022 23:04:39 GMT
+Connection: keep-alive
+
+{"message":"Registro criado com sucesso !"}
+</pre>
+
+## Alterando um registro da tabela ( Método PUT )
+
+Como alternativa ao HTTP CLIENT, ainda no diretório do projeto, execute o comando:
+
+<pre>
+curl -i -X PUT -H 'Accept: application/json; charset=utf-8' -H 'Content-type: application/json; charset=utf-8' http://localhost:3000/todos/3 --data '{"nome":"tarefa 3 alterada","descricao":"fazer tarefa 3 alterada"}'
+</pre>
+
+Você deverá receber o seguinte retorno:
+
+<pre>
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Content-Type: application/json; charset=utf-8
+Content-Length: 45
+ETag: W/"2d-jq0xFcfafr5hBk0uH5YGAuK2kRc"     
+Date: Thu, 29 Sep 2022 23:08:12 GMT
+Connection: keep-alive
+
+{"message":"Registro alterado com sucesso !"}
+</pre>
+
+## Removendo um registro da tabela ( Método DELETE )
+
+Como alternativa ao HTTP CLIENT, ainda no diretório do projeto, execute o comando:
+
+<pre>
+curl -i -X DELETE -H 'Accept: application/json; charset=utf-8' -H 'Content-type: application/json; charset=utf-8' http://localhost:3000/todos/3
+</pre>
+
+Você deverá receber o seguinte retorno:
+
+<pre>
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Content-Type: application/json; charset=utf-8
+Content-Length: 45
+ETag: W/"2d-eQpq55PixHsv8U65Y4Uzz3jy9Xc"     
+Date: Thu, 29 Sep 2022 23:09:58 GMT
+Connection: keep-alive
+
+{"message":"Registro deletado com sucesso !"}
 </pre>
 
 ## Dúvidas?
